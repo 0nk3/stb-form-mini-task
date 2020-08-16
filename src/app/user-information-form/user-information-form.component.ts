@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { UserInformation } from './../data/user-information';
 
@@ -11,15 +12,19 @@ export class UserInformationFormComponent implements OnInit {
   // form model, gonna use 2-way data binding to change these
   // values when form is filled
   originalUserInformation: UserInformation = {
-    firstName: 'Onke',
-    lastName: 'Fanti',
-    aNumber: 'a123456',
-    cellNumber: '011 233 111',
-    email: '0nk3.0nk3@gmail.com',
+    firstName: null,
+    lastName: null,
+    aNumber: null,
+    cellNumber: null,
+    email: null,
   };
-  //copt data
+  //copt data using spread syntax
   userInformation: UserInformation = { ...this.originalUserInformation };
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit(form: NgForm) {
+    console.log('in onsubmit  : ', form.valid);
+  }
 }

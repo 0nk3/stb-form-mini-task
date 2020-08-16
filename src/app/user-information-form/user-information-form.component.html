@@ -1,6 +1,6 @@
 <div class="container">
-  <h2>User Settings</h2>
-  <form #form="ngForm">
+  <h2>User Information</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="first-name"> Name </label>
       <input
@@ -10,8 +10,11 @@
         class="form-control"
         placeholder="Enter your first name"
         [(ngModel)]="userInformation.firstName"
+        required
       />
+    </div>
 
+    <div class="form-group">
       <label for="last-name"> Last Name </label>
       <input
         id="last-name"
@@ -20,25 +23,32 @@
         class="form-control"
         placeholder="Enter your last name"
         [(ngModel)]="userInformation.lastName"
+        required
       />
+    </div>
 
+    <div class="form-group">
       <label for="cell-number"> Cell Number </label>
       <input
         id="cell-number"
         name="cell-number"
-        type="text"
+        type="tel"
         class="form-control"
         placeholder="Enter your phone number"
         [(ngModel)]="userInformation.cellNumber"
+        required
+        pattern="0.*"
+        maxlength="10"
       />
-      <!-- <div class="form-group">
+    </div>
+    <!-- <div class="form-group">
         <label for="gender"> Gender </label>
         <select class="gender" name="gender" id="male-female" ngModel>
           <option> Male </option>
           <option> Female </option>
         </select>
       </div> -->
-
+    <div class="form-group">
       <label for="A-Number"> A Number </label>
       <input
         id="a-number"
@@ -47,8 +57,14 @@
         class="form-control"
         placeholder="Enter your a-number"
         [(ngModel)]="userInformation.aNumber"
+        required
+        pattern="a.*"
+        minlength="6"
+        maxlength="6"
       />
+    </div>
 
+    <div class="form-group">
       <label for="email"> Email </label>
       <input
         id="email"
@@ -58,7 +74,9 @@
         placeholder="Enter your email adress"
         [(ngModel)]="userInformation.email"
       />
+    </div>
 
+    <div class="form-group">
       <label for="password">Password</label>
       <input
         type="password"
@@ -66,13 +84,16 @@
         class="form-control"
         id="password"
         placeholder="* * * * * * * *"
+        required
+        minlength="8"
       />
-      <small> Password should be at least 8 characters long .</small>
-      <div class="information-security-note">
-        Your information will be managed securely
-      </div>
+    </div>
+
+    <small> Password should be at least 8 characters long .</small>
+    <div class="information-security-note">
+      Your information will be managed securely
     </div>
     <button class="btn btn-primary">Submit</button>
   </form>
 </div>
-{{ originalUserInformation | json }}
+{{ userInformation | json }}

@@ -1,7 +1,7 @@
 export interface UserInformation {
   firstName: string;
   lastName: string;
-  cellNumber: string;
+  cellNumber: number;
   aNumber: string;
   email: string;
 }
