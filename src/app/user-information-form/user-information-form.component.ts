@@ -17,6 +17,7 @@ export class UserInformationFormComponent implements OnInit {
     cellNumber: '011 233 111',
     email: '0nk3.0nk3@gmail.com',
   };
+  //copt data
   userInformation: UserInformation = { ...this.originalUserInformation };
   constructor() {}
 
