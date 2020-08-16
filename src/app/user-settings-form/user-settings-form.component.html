@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>User Settings</h2>
+  <form #form="ngForm">
+    <div class="form-group">
+      <label for="first-name"> Name </label>
+      <input
+        id="name"
+        type="text"
+        class="form-control"
+        placeholder="Enter your first name"
+      />
+
+      <label for="last-name"> Last Name </label>
+      <input
+        id="last-name"
+        type="text"
+        class="form-control"
+        placeholder="Enter your last name"
+      />
+
+      <label for="cell-number"> Cell Number </label>
+      <input
+        id="cell-number"
+        type="text"
+        class="form-control"
+        placeholder="Enter your phone number"
+      />
+
+      <label for="A-Number"> A Number </label>
+      <input
+        id="a-number"
+        type="text"
+        class="form-control"
+        placeholder="Enter your a-number"
+      />
+
+      <label for="email"> Email </label>
+      <input
+        id="email"
+        type="email"
+        class="form-control"
+        placeholder="Enter your email adress"
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="* * * * * * * *"
+      />
+      <small> Password should be at least 8 characters long .</small>
+      <div class="information-security-note">
+        Your information will be managed securely
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{{ form  }}
