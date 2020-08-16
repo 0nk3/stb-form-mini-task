@@ -5,49 +5,68 @@
       <label for="first-name"> Name </label>
       <input
         id="name"
+        name="name"
         type="text"
         class="form-control"
         placeholder="Enter your first name"
+        ngModel
       />
 
       <label for="last-name"> Last Name </label>
       <input
         id="last-name"
+        name="last-name"
         type="text"
         class="form-control"
         placeholder="Enter your last name"
+        ngModel
       />
 
       <label for="cell-number"> Cell Number </label>
       <input
         id="cell-number"
+        name="cell-number"
         type="text"
         class="form-control"
         placeholder="Enter your phone number"
+        ngModel
       />
+      <!-- <div class="form-group">
+        <label for="gender"> Gender </label>
+        <select class="gender" name="gender" id="male-female" ngModel>
+          <option> Male </option>
+          <option> Female </option>
+        </select>
+      </div> -->
 
       <label for="A-Number"> A Number </label>
       <input
         id="a-number"
+        name="a-number"
         type="text"
         class="form-control"
         placeholder="Enter your a-number"
+        ngModel
       />
 
       <label for="email"> Email </label>
       <input
         id="email"
+        name="email"
         type="email"
         class="form-control"
         placeholder="Enter your email adress"
+        ngModel
       />
 
       <label for="password">Password</label>
       <input
         type="password"
+        name="password"
         class="form-control"
         id="password"
         placeholder="* * * * * * * *"
+        ngModel
       />
       <small> Password should be at least 8 characters long .</small>
       <div class="information-security-note">
@@ -57,4 +76,4 @@
     <button class="btn btn-primary">Submit</button>
   </form>
 </div>
-{{ form  }}
+{{ form.value | json }}
