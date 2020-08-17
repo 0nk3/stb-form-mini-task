@@ -1,6 +1,11 @@
 <div class="container">
   <h2>User Information</h2>
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+  <form
+    #form="ngForm"
+    *ngIf="!submitted"
+    (ngSubmit)="onSubmit(form)"
+    novalidate
+  >
     <div class="form-group">
       <label for="first-name"> Name </label>
       <input
@@ -118,4 +123,4 @@
     <button [disabled]="form.invalid" class="btn btn-primary">Submit</button>
   </form>
 </div>
-{{ userInformation | json }}
+<h1>Data Submitted. Thank You!</h1>

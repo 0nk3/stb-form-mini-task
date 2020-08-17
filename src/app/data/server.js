@@ -11,8 +11,13 @@ app.use(cors());
 
 // let add a piece of code to test a get request
 app.get("/", function (request, response) {
-  response.send("Hello From The Server");
+  response.send("Express Server Started . . .");
+});
+// where will out data be sent to
+app.post("/capture", function (request, response) {
+  console.log(request.body);
+  response.status(200).send({ message: "Data Received! " });
 });
 app.listen(PORT, function () {
-  console.log("Server running on localhost : " + PORT);
+  console.log("Server running on localhost:" + PORT);
 });

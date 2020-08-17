@@ -20,6 +20,7 @@ export class UserInformationFormComponent implements OnInit {
     email: null,
     password: null,
   };
+  submitted = false;
   //copt data using spread syntax
   userInformation: UserInformation = { ...this.originalUserInformation };
   constructor(private captureService: CaptureService) {}
@@ -27,6 +28,7 @@ export class UserInformationFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
+    this.submitted = true;
     console.log('form valid ? : ', form.valid);
     console.log(this.userInformation); // to be removed
     this.captureService.capture(this.userInformation).subscribe(
