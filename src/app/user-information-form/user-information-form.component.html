@@ -45,8 +45,7 @@
         [(ngModel)]="userInformation.cellNumber"
         required
         #cellnumber="ngModel"
-        pattern="0.*"
-        maxlength="10"
+        pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
       />
       <small
         class="text-danger"
@@ -91,6 +90,7 @@
         placeholder="Enter your email address"
         [(ngModel)]="userInformation.email"
         required
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
         #email="ngModel"
       />
       <small
@@ -113,14 +113,24 @@
         #password="ngModel"
         placeholder="* * * * * * * *"
         required
+        pattern="^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$"
         minlength="8"
       />
+      <small
+        class="text-danger"
+        [class.d-none]="password.valid || password.untouched"
+      >
+        Password must contain at least one letter, at least one number, and be
+        longer than six charaters.
+      </small>
     </div>
 
     <div class="information-security-note">
       Your information will be managed securely
     </div>
-    <button [disabled]="form.invalid" class="btn btn-success btn-lg btn-block">Submit</button>
+    <button [disabled]="form.invalid" class="btn btn-success btn-lg btn-block">
+      Submit
+    </button>
   </form>
 </div>
-<h1>Data Submitted. Thank You!</h1>
+<!-- <h1>Data Submitted. Thank You!</h1> -->
