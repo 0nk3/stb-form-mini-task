@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>User Information</h2>
+  <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; text-align: center ;">User Information</h2>
   <form
     #form="ngForm"
     *ngIf="!submitted"
@@ -133,4 +133,10 @@
     </button>
   </form>
 </div>
-<!-- <h1>Data Submitted. Thank You!</h1> -->
+<!-- <h1 *ngIf="submitted">Data Submitted. Thank You!</h1> -->
+<div *ngIf="submitted" class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';"
+    >&times;</span
+  >
+  Thank You!. You information has been submitted.
+</div>
