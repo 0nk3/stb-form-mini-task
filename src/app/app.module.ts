@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,7 +8,7 @@ import { UserInformationFormComponent } from './user-information-form/user-infor
 
 @NgModule({
   declarations: [AppComponent, UserInformationFormComponent],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

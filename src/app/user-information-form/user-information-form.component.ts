@@ -1,3 +1,4 @@
+import { CaptureService } from './../capture.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -17,14 +18,20 @@ export class UserInformationFormComponent implements OnInit {
     aNumber: null,
     cellNumber: null,
     email: null,
+    password: null,
   };
   //copt data using spread syntax
   userInformation: UserInformation = { ...this.originalUserInformation };
-  constructor() {}
+  constructor(private captureService: CaptureService) {}
 
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
-    console.log('in onsubmit  : ', form.valid);
+    console.log('form valid ? : ', form.valid);
+    console.log(this.userInformation); // to be removed
+    this.captureService.capture(this.userInformation).subscribe(
+      (data) => console.log('Success!', data),
+      (error) => console.log('Error!', error)
+    );
   }
 }

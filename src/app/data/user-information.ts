@@ -4,4 +4,5 @@ export interface UserInformation {
   cellNumber: number;
   aNumber: string;
   email: string;
+  password: string;
 }
